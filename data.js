@@ -186,7 +186,6 @@ const SHOWS = [
    entries freely — day/mon are just the date shown in the little
    date box (e.g. day: "14", mon: "Sep"). */
 const UPCOMING = [
-  { day: "15", mon: "Aug", venue: "FLUX: Open Air Party", city: "Wonderlove", url: "https://www.eventbrite.com/e/babsy-wonderlove-flux-open-air-party-tickets-1996503755477" },
-  { day: "21", mon: "Aug", venue: "Why Not Campout", city: "Mount Hood National Forest", url: "https://www.whynotcampout.com/" },
-   { day: "28", mon: "Aug", venue: "Dollhouse: Hot Girls Slumber Party", city: "Secret Grove", url: "https://ra.co/events/2507285" },
+  { day: "08", mon: "Sep", venue: "Wonderlove", city: "Portland, OR", url: "#" },
+  { day: "18", mon: "Sep", venue: "Wonderlove", city: "Portland, OR", url: "#" },
 ];
