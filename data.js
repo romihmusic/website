@@ -181,11 +181,24 @@ const SHOWS = [
 ];
 
 
-/* ---------- UPCOMING SHOWS ----------
-   Always shown in order, NOT affected by the toggle. Add or remove
-   entries freely — day/mon are just the date shown in the little
-   date box (e.g. day: "14", mon: "Sep"). */
-const UPCOMING = [
-  { day: "08", mon: "Sep", venue: "Wonderlove", city: "Portland, OR", url: "#" },
-  { day: "18", mon: "Sep", venue: "Wonderlove", city: "Portland, OR", url: "#" },
-];
+/* ---------------- upcoming ---------------- */
+const upcomingSection = document.querySelector('.upcoming-section');
+const upcomingList = document.getElementById('upcomingList');
+
+if(UPCOMING.length === 0){
+  upcomingSection.style.display = 'none';
+} else {
+  UPCOMING.forEach(u => {
+    const li = document.createElement('li');
+    li.className = 'upcoming-item';
+    li.innerHTML = `
+      <div class="upcoming-date"><div class="day">${u.day}</div><div class="mon">${u.mon}</div></div>
+      <div class="upcoming-details">
+        <div class="upcoming-venue">${u.venue}</div>
+        <div class="upcoming-city">${u.city}</div>
+      </div>
+      <a class="ticket-link" href="${u.url}" target="_blank" rel="noopener">Tickets</a>
+    `;
+    upcomingList.appendChild(li);
+  });
+}
