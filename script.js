@@ -147,19 +147,25 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ---------------- upcoming ---------------- */
+const upcomingSection = document.querySelector('.upcoming-section');
 const upcomingList = document.getElementById('upcomingList');
-UPCOMING.forEach(u => {
-  const li = document.createElement('li');
-  li.className = 'upcoming-item';
-  li.innerHTML = `
-    <div class="upcoming-date"><div class="day">${u.day}</div><div class="mon">${u.mon}</div></div>
-    <div class="upcoming-details">
-      <div class="upcoming-venue">${u.venue}</div>
-      <div class="upcoming-city">${u.city}</div>
-    </div>
-    <a class="ticket-link" href="${u.url}" target="_blank" rel="noopener">Tickets</a>
-  `;
-  upcomingList.appendChild(li);
-});
+
+if(UPCOMING.length === 0){
+  upcomingSection.style.display = 'none';
+} else {
+  UPCOMING.forEach(u => {
+    const li = document.createElement('li');
+    li.className = 'upcoming-item';
+    li.innerHTML = `
+      <div class="upcoming-date"><div class="day">${u.day}</div><div class="mon">${u.mon}</div></div>
+      <div class="upcoming-details">
+        <div class="upcoming-venue">${u.venue}</div>
+        <div class="upcoming-city">${u.city}</div>
+      </div>
+      <a class="ticket-link" href="${u.url}" target="_blank" rel="noopener">Tickets</a>
+    `;
+    upcomingList.appendChild(li);
+  });
+}
 
 renderShows();
